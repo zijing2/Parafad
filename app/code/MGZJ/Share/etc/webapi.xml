@@ -1,0 +1,102 @@
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<!-- StoreView -->
+    <route url="/V1/Share/:share_owner_id" method="GET">
+        <service class="MGZJ\Share\Api\ShareInterface" method="getShareByUser"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Share/" method="GET">
+        <service class="MGZJ\Share\Api\ShareInterface" method="getShareAll"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Share/:share_owner_id" method="POST">
+        <service class="MGZJ\Share\Api\ShareInterface" method="insertShare"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Share/:share_owner_id/:share_id" method="DELETE">
+        <service class="MGZJ\Share\Api\ShareInterface" method="deleteShare"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Share/:share_owner_id/:share_id" method="PUT">
+        <service class="MGZJ\Share\Api\ShareInterface" method="updateShare"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Share/:share_owner_id/:share_id/comment/:comment_owner_id" method="GET">
+        <service class="MGZJ\Share\Api\ShareInterface" method="getCommentByShare"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Share/:share_owner_id/:share_id/comment/:comment_owner_id" method="POST">
+        <service class="MGZJ\Share\Api\ShareInterface" method="insertCommentByShare"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Share/:share_owner_id/:share_id/comment/:comment_owner_id/:comment_id" method="DELETE">
+        <service class="MGZJ\Share\Api\ShareInterface" method="deleteCommentByShare"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Share/:share_owner_id/:share_id" method="GET">
+        <service class="MGZJ\Share\Api\ShareInterface" method="getShareDetail"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Message/:message_owner_id" method="GET">
+        <service class="MGZJ\Share\Api\ShareInterface" method="getMessageByUser"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Message/:message_owner_id" method="POST">
+        <service class="MGZJ\Share\Api\ShareInterface" method="createCommentMessageByUser"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Message/:message_owner_id/:message_id" method="DELETE">
+        <service class="MGZJ\Share\Api\ShareInterface" method="deleteMessageByShare"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Message/:message_owner_id/:message_id/setReadStatus" method="PUT">
+        <service class="MGZJ\Share\Api\ShareInterface" method="setMessageReadStatus"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Collection/:collection_owner_id" method="GET">
+        <service class="MGZJ\Share\Api\ShareInterface" method="getShareCollection"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Collection/:collection_owner_id" method="POST">
+        <service class="MGZJ\Share\Api\ShareInterface" method="addShareCollection"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/Collection/:collection_owner_id/:share_owner_id/:share_id" method="DELETE">
+        <service class="MGZJ\Share\Api\ShareInterface" method="deleteShareCollection"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    
+    
+</routes>
